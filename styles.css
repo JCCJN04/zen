@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.info-panel {
+    position: fixed;
+    bottom: -100%; /* Start hidden below the viewport */
+    left: 0;
+    width: 100%;
+    background-color: #fefefe;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    transition: bottom 0.5s ease-in-out; /* Smooth slide up effect */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.info-panel h2 {
+    margin-top: 0;
+}
+
+.close-info {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.info-icon {
+    font-size: 24px; /* Tamaño del icono */
+    color: #343323; /* Color del icono */
+    cursor: pointer; /* Cambia el cursor a mano cuando se pase sobre el icono */
+}
+
+.info-icon i {
+    transition: color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.info-icon:hover i {
+    color: #000000; /* Color del icono cuando se pasa sobre él */
+}
+
+.close-info:hover,
+.close-info:focus {
+    color: black;
+}
+
+.logo-svg {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    background-color: transparent; /* Asegura que no haya fondo añadido */
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.menu-nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.categories {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.categories a {
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid transparent;
+}
+
+.categories a:hover {
+    border-bottom: 2px solid #000;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.menu-section {
+    padding: 20px;
+}
+
+.menu-item {
+    display: flex; /* Alinea la imagen y los detalles en una fila */
+    align-items: center; /* Alinea los elementos verticalmente */
+    margin-bottom: 20px; /* Espacio inferior entre elementos del menú */
+    padding: 10px; /* Espacio interno alrededor del contenido */
+    border-bottom: 1px solid #ddd; /* Línea delgada separadora entre productos */
+}
+
+.menu-item img {
+    width: 130px; /* Ancho fijo de la imagen */
+    height: 130px; /* Altura fija de la imagen */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    border-radius: 10px; /* Redondea las esquinas de la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.menu-details {
+    flex: 1;
+}
+
+.price {
+    font-size: 18px; /* Tamaño del texto del precio */
+    color: #000000; /* Color del precio */
+    font-weight: bold; /* Hace el texto en negritas */
+}
+
+
+.description {
+    font-size: 14px; /* Tamaño del texto de la descripción */
+    color: #555; /* Color de la descripción */
+    margin-top: 2px; /* Espacio encima de la descripción */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Cambia el color cuando el usuario pasa el ratón */
+}
+

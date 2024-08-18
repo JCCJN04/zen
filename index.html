@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo_prueba.png" alt="Logo del Restaurante" class="logo-svg">
+            <span class="info-icon" onclick="openInfoPanel()">
+                <i class="fas fa-info-circle"></i>
+            </span>
+            
+        </div>
+    </header>
+
+    <nav class="menu-nav">
+        <span class="openbtn" onclick="openNav()">&#9776;</span>
+        <div class="categories">
+            <a href="#comida" onclick="navigateToSection('comida')">Comida</a>
+            <a href="#bebidas" onclick="navigateToSection('bebidas')">Bebidas</a>
+            <a href="#postres" onclick="navigateToSection('postres')">Postres</a>
+        </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#comida" onclick="navigateToSection('comida')">Comida</a>
+        <a href="#bebidas" onclick="navigateToSection('bebidas')">Bebidas</a>
+        <a href="#postres" onclick="navigateToSection('postres')">Postres</a>
+    </div>
+
+   <!-- Panel de Información -->
+<div id="infoPanel" class="info-panel">
+    <span class="close-info" onclick="closeInfoPanel()">&times;</span>
+    <h2>Información del Restaurante</h2>
+    <p><strong>Horario:</strong> 8:00 AM - 10:00 PM</p>
+    <p><strong>Dirección:</strong> <a href="https://maps.app.goo.gl/6TopFeomVWqbSr2L6" target="_blank" rel="noopener noreferrer">Calle Falsa 123, Monterrey</a></p>
+    <p><strong>Servicios:</strong> Comida para llevar, Servicio a domicilio, Restaurante</p>
+</div>
+
+
+    <main>
+        <section id="comida" class="menu-section">
+            <h2>Comida</h2>
+            <div class="menu-item">
+                <img src="imagenes/pasta_carbonara.webp" alt="Pasta Carbonara">
+                <div class="menu-details">
+                    <h3>Pasta Carbonara</h3>
+                    <p class="description">Deliciosa pasta con salsa carbonara y tocino crujiente.</p>
+                    <p class="price">$120.00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="imagenes/ensalada_cesar.webp" alt="Ensalada César">
+                <div class="menu-details">
+                    <h3>Ensalada César</h3>
+                    <p class="description">Ensalada fresca con aderezo César, pollo a la parrilla y crutones.</p>
+                    <p class="price">$90.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="bebidas" class="menu-section" style="display: none;">
+            <h2>Bebidas</h2>
+            <div class="menu-item">
+                <img src="imagenes/cafe.jpeg" alt="Café Americano">
+                <div class="menu-details">
+                    <h3>Café Americano</h3>
+                    <p class="description">Una deliciosa taza de café americano recién hecho.</p>
+                    <p class="price">$35.00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="imagenes/jugo_naranja.webp" alt="Jugo de Naranja">
+                <div class="menu-details">
+                    <h3>Jugo de Naranja</h3>
+                    <p class="description">Jugo natural de naranjas frescas.</p>
+                    <p class="price">$45.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="postres" class="menu-section" style="display: none;">
+            <h2>Postres</h2>
+            <div class="menu-item">
+                <img src="imagenes/cheesecake.jpg" alt="Cheesecake">
+                <div class="menu-details">
+                    <h3>Cheesecake</h3>
+                    <p class="description">Pastel de queso con una base crujiente y cobertura de frutas.</p>
+                    <p class="price">$70.00</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="imagenes/brownie.jpeg" alt="Brownie">
+                <div class="menu-details">
+                    <h3>Brownie</h3>
+                    <p class="description">Brownie de chocolate con nueces, servido con helado de vainilla.</p>
+                    <p class="price">$50.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.instagram.com/starbucks/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/Starbucks" target="_blank" aria-label="X">
+                <i class="fab fa-x"></i>
+            </a>
+            <a href="https://www.tiktok.com/@starbucks" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Starbucks. Todos los derechos reservados.</p>
+    
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function navigateToSection(sectionId) {
+            closeNav(); // Close the sidenav
+            // Smooth scroll to the selected section
+            document.querySelector(`#${sectionId}`).scrollIntoView({ behavior: 'smooth' });
+            // Display the selected section and hide others
+            document.querySelectorAll('.menu-section').forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        function openInfoPanel() {
+            document.getElementById("infoPanel").style.bottom = "0";
+        }
+
+        function closeInfoPanel() {
+            document.getElementById("infoPanel").style.bottom = "-100%";
+        }
+    </script>
+</body>
+</html>
